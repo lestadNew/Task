@@ -120,6 +120,18 @@ class KeychainService {
 
 }
 
+// MARK: - First load
+extension KeychainService {
+    
+    func checkFirstLoad() {
+        if !UserDefaults.standard.bool(forKey: Constant.Defaults.tempFirstLoad) {
+            KeychainService.standard.token = nil
+            UserDefaults.standard.set(true, forKey: Constant.Defaults.tempFirstLoad)
+        }
+    }
+    
+}
+
 // MARK: - Models
 extension KeychainService {
     

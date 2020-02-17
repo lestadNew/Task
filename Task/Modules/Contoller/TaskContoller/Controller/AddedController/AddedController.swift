@@ -46,8 +46,8 @@ class AddedController: BaseController {
         updateUI()
         datePicker.minimumDate = Date()
         textView.setupDoneToolbar()
-        title = "Added"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: (task != nil) ? "Edit" : "Done", style: .done, target: self, action: #selector(actionDone))
+        title = Constant.Text.added
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: (task != nil) ? Constant.Text.edit : Constant.Text.done, style: .done, target: self, action: #selector(actionDone))
     }
     
     //MARK: - Private methods

@@ -9,5 +9,13 @@
 import Foundation
 
 struct Constant {
-    static let tempFirstLoad = "tempFirstLoad"
+    struct Defaults {
+        static let tempFirstLoad = "tempFirstLoad"
+    }
+    
+    struct Text {
+        static let done = "Done"
+        static let edit = "Edit"
+        static let added = "Added"
+    }
 }
