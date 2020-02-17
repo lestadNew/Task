@@ -17,4 +17,13 @@ extension UITableView {
         self.endUpdates()
         UIView.setAnimationsEnabled(true)
     }
+    
+    func deleteIndexWithoutAnimation(indexPath: IndexPath) {
+        UIView.setAnimationsEnabled(false)
+        self.beginUpdates()
+        self.deleteRows(at: [indexPath], with: .none)
+        self.endUpdates()
+        UIView.setAnimationsEnabled(true)
+    }
+    
 }

@@ -26,6 +26,7 @@
 		1064CE8F23F3F060004EA1D3 /* RestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064CE8E23F3F060004EA1D3 /* RestMethod.swift */; };
 		1064CE9223F3F08E004EA1D3 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064CE9123F3F08E004EA1D3 /* ErrorModel.swift */; };
 		1064CE9523F3F11D004EA1D3 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064CE9423F3F11D004EA1D3 /* AlertService.swift */; };
+		107500A623FAC870002E3D83 /* ServiceProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107500A523FAC870002E3D83 /* ServiceProgress.swift */; };
 		109EC52123F7EA8700A7FA28 /* RestAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109EC52023F7EA8700A7FA28 /* RestAuth.swift */; };
 		109EC52323F7EBB200A7FA28 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109EC52223F7EBB200A7FA28 /* UserModel.swift */; };
 		109EC52623F7ED7700A7FA28 /* Suffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109EC52523F7ED7700A7FA28 /* Suffix.swift */; };
@@ -70,6 +71,7 @@
 		1064CE8E23F3F060004EA1D3 /* RestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMethod.swift; sourceTree = "<group>"; };
 		1064CE9123F3F08E004EA1D3 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		1064CE9423F3F11D004EA1D3 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		107500A523FAC870002E3D83 /* ServiceProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProgress.swift; sourceTree = "<group>"; };
 		109EC52023F7EA8700A7FA28 /* RestAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAuth.swift; sourceTree = "<group>"; };
 		109EC52223F7EBB200A7FA28 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		109EC52523F7ED7700A7FA28 /* Suffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suffix.swift; sourceTree = "<group>"; };
@@ -106,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1037B93123FABCEC0092821D /* AddedController */ = {
+			isa = PBXGroup;
+			children = (
+				10E13A0C23F9961600CC0EC0 /* AddedController.swift */,
+				10E13A0D23F9961600CC0EC0 /* AddedController.xib */,
+			);
+			path = AddedController;
+			sourceTree = "<group>";
+		};
 		1064CE4123F3D97E004EA1D3 = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				1064CE9423F3F11D004EA1D3 /* AlertService.swift */,
+				107500A523FAC870002E3D83 /* ServiceProgress.swift */,
 			);
 			path = Allert;
 			sourceTree = "<group>";
@@ -346,8 +358,7 @@
 			children = (
 				10E139F923F9719A00CC0EC0 /* TaskController.swift */,
 				10E139FA23F9719A00CC0EC0 /* TaskController.xib */,
-				10E13A0C23F9961600CC0EC0 /* AddedController.swift */,
-				10E13A0D23F9961600CC0EC0 /* AddedController.xib */,
+				1037B93123FABCEC0092821D /* AddedController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -544,6 +555,7 @@
 				10E139F723F9717E00CC0EC0 /* TaskRouter.swift in Sources */,
 				1064CE8F23F3F060004EA1D3 /* RestMethod.swift in Sources */,
 				10E13A0B23F98C4A00CC0EC0 /* RestCall+Extenshion.swift in Sources */,
+				107500A623FAC870002E3D83 /* ServiceProgress.swift in Sources */,
 				10E13A0923F986F200CC0EC0 /* RestTask.swift in Sources */,
 				1064CE9223F3F08E004EA1D3 /* ErrorModel.swift in Sources */,
 				1064CE8023F3E295004EA1D3 /* UIColor+Extenshion.swift in Sources */,

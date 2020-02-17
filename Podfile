@@ -13,6 +13,9 @@ def project_pods
   
   pod 'Alamofire', '~> 4.8.0'
   pod 'AlamofireObjectMapper', '~> 5.2'
+  
+  # UI
+  pod 'NVActivityIndicatorView'
 end
 
 target 'Task' do

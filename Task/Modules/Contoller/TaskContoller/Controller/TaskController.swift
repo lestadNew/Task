@@ -110,6 +110,24 @@ extension TaskController: UITableViewDataSource, UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            guard let id = task?.tasks[indexPath.row].id else {
+                return
+            }
+            
+            RestTask().deleteTask(withСallName: viewControllerName, id: id) { [weak self] in
+                guard let `self` = self else { return }
+                
+                self.task?.tasks.remove(at: indexPath.row)
+                self.tableView.deleteIndexWithoutAnimation(indexPath: indexPath)
+            }
+        }
+    }
 }
 
 

@@ -185,5 +185,6 @@ class BaseController: UIViewController, UIGestureRecognizerDelegate {
     deinit {
         debugPrint(" deinit ----->>>> \(viewControllerName)")
         NotificationCenter.default.removeObserver(self)
+        RestCalls.cancelRequest(byName: viewControllerName)
     }
 }
