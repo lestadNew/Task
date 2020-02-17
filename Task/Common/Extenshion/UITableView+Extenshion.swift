@@ -26,4 +26,11 @@ extension UITableView {
         UIView.setAnimationsEnabled(true)
     }
     
+    func reloadIndexWithoutAnimation(indexPath: IndexPath) {
+        UIView.setAnimationsEnabled(false)
+        self.beginUpdates()
+        self.reloadRows(at: [indexPath], with: .none)
+        self.endUpdates()
+        UIView.setAnimationsEnabled(true)
+    }
 }

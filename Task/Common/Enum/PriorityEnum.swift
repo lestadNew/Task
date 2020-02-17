@@ -20,4 +20,12 @@ enum PriorityEnum: Int {
         case .low: return "Low"
         }
     }
+    
+    static func fromName(name: String) -> PriorityEnum? {
+        if name == "High" { return .hight }
+        if name == "Normal" { return .medium }
+        if name == "Low" { return .low }
+        
+        return nil
+    }
 }

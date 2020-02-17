@@ -114,6 +114,11 @@ extension TaskController: UITableViewDataSource, UITableViewDelegate {
         return true
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        TaskRouter(presenter: navigationController).pushAddedController(task: task?.tasks[indexPath.row], delegate: self)
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             guard let id = task?.tasks[indexPath.row].id else {
@@ -133,8 +138,15 @@ extension TaskController: UITableViewDataSource, UITableViewDelegate {
 
 //MARK: - AddedControllerDelegate
 extension TaskController: AddedControllerDelegate{
-    func addedController(controller: AddedController, model: OneTaskModel) {
+    func addedController(controller: AddedController, added model: OneTaskModel) {
         task?.tasks.insert(model.task, at: 0)
         tableView.insertIndexWithoutAnimation(indexPath: IndexPath(row: 0, section: 0))
+    }
+    
+    func addedController(controller: AddedController, update model: DescriptTaskModel) {
+        if let index = task?.tasks.firstIndex(where: {$0.id == model.id}) {
+            task?.tasks[index] = model
+            tableView.reloadIndexWithoutAnimation(indexPath: IndexPath(row: index, section: 0))
+        }
     }
 }

@@ -33,7 +33,6 @@ class RestTask {
     
     func createTask(withСallName name: String,
                     body: [String: Any]?,
-                 page: Int = 1,
               loader: Bool = true,
               success: @escaping (OneTaskModel) -> ()) {
         
@@ -53,6 +52,29 @@ class RestTask {
         }
     }
     
+    func updateTask(withСallName name: String,
+                    id: Int,
+                    body: [String: Any]?,
+              loader: Bool = true,
+              success: @escaping () -> ()) {
+        
+        if loader {
+            ServiceProgress().showProgress()
+        }
+        
+        
+        RestCalls().call(type: Array<Any>.self, path: RestSuffix.Task.taskWithId(id: id).getURL(), method: .put, encoding: JSONEncoding.default, name: name, params: body, headers: RestCalls.authorizationHeader(), success: { (model) in
+            success()
+            ServiceProgress().stopProgress()
+        }, error: { (error) in
+            AlertService().show(title: error.message, message: error.messageError(), action: nil)
+            ServiceProgress().stopProgress()
+        }) { (error) in
+            AlertService().show(title: "Error", message: error.localizedDescription, action: nil)
+            ServiceProgress().stopProgress()
+        }
+    }
+    
     func deleteTask(withСallName name: String,
                     id: Int,
               loader: Bool = true,
@@ -62,7 +84,7 @@ class RestTask {
             ServiceProgress().showProgress()
         }
         
-        RestCalls().call(type: Array<Any>.self, path: RestSuffix.Task.deteleTaskWithId(id: id).getURL(), method: .delete, encoding: JSONEncoding.default, name: name, params: nil, headers: RestCalls.authorizationHeader(), success: { (model) in
+        RestCalls().call(type: Array<Any>.self, path: RestSuffix.Task.taskWithId(id: id).getURL(), method: .delete, encoding: JSONEncoding.default, name: name, params: nil, headers: RestCalls.authorizationHeader(), success: { (model) in
             success()
             ServiceProgress().stopProgress()
         }, error: { (error) in

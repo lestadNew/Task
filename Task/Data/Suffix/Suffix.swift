@@ -22,7 +22,7 @@ struct RestSuffix {
     struct Task {
         static var getTask: Suffix = "/tasks" /// GET POST Task list
         
-        static func deteleTaskWithId(id : Int) -> Suffix {
+        static func taskWithId(id : Int) -> Suffix {
             return "/tasks" + "/\(id)"
         }
     }

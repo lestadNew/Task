@@ -19,9 +19,10 @@ class TaskRouter: BaseRouter {
         push(controller: controller)
     }
     
-    func pushAddedController<C>(delegate: C) where C: AddedControllerDelegate {
+    func pushAddedController<C>(task: DescriptTaskModel? = nil, delegate: C) where C: AddedControllerDelegate {
         let controller = AddedController()
         controller.delegate = delegate
+        controller.task = task
         push(controller: controller)
     }
 }
